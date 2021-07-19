@@ -54,7 +54,7 @@ def ComputeCrossEntropy(X, y, W, b):
     l=-np.log(Y.T@p)
     return np.trace(l)
 
-def ComputeCost(X, y, W, b, lamda): # why sum up diagonal?
+def ComputeCost(X, y, W, b, lamda):
     loss=ComputeCrossEntropy(X, y, W, b)
     c=loss/X.shape[1]+lamda*np.sum(np.square(W))
     return c
